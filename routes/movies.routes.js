@@ -28,7 +28,7 @@ router.route("/movies/:id/edit")
 router.route("/movies/create")
 .get((req, res)=>{
     Celebrity.find()
-    .then((celebrities)=>{res.render("movies/new-movie", celebrities)})
+    .then((celebrities)=>{res.render("movies/new-movie", {celebrities})})
 })
 .post((req, res)=>{
     const {title, genre, plot, cast} = req.body;

@@ -1,5 +1,11 @@
 <h2>List of celebrities</h2>
 
 {{#each celebrities}}
-    <p>{{name}}</p>
+    <p>
+        <span>{{name}}</span>
+        <br>
+        <a href="/celebrity/{{_id}}">See details</a>
+    </p>
 {{/each}}
+
+<a href="/">Go home</a>

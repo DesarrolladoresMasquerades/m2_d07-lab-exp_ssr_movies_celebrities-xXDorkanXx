@@ -12,8 +12,12 @@
 
     <label for="cast">Cast:</label>
     <select name="cast" multiple>
-    {{#each celebrities}}
+    {{#each celebrities.celebrities}}
         <option value="{{_id}}">{{name}}</option>
     {{/each}}
     </select>
+
+    <button type="submit">Edit</button>
+    <br>
+    <a href="/movies">Go back to movies</a>
 </form>

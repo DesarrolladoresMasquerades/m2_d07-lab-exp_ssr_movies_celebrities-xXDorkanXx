@@ -11,6 +11,12 @@ router.route("/celebrities/create")
     .catch((err)=>{res.render("celebrities/new-celebrity")});
 })
 
+router.get("/celebrity/:id", (req, res)=>{
+    Celebrity.findById(req.params.id)
+    .then((celebrity)=>{res.render("celebrities/celebrity-details.hbs", celebrity)})
+    .catch((err)=>{console.log(err)})
+})
+
 router.get("/celebrities", (req, res)=>{
     Celebrity.find()
     .then((celebrities)=>{res.render("celebrities/celebrities.hbs", {celebrities})})
